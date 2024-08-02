@@ -10,7 +10,7 @@ function connect() {
         // Disconnect after 1 second
         setTimeout(() => {
             ws.close();
-        }, 1000);
+        }, 60000);
     });
 
     ws.on('message', (data) => {
@@ -42,6 +42,9 @@ function connect() {
     ws.on('close', () => console.log('Disconnected from cnc'));
     ws.on('error', () => console.log('Connection error'));
 }
+
+// Connect immediately
+connect();
 
 // Connect every 1 second
 setInterval(connect, 60000);
