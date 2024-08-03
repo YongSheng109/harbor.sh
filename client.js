@@ -44,6 +44,12 @@ function connect() {
         console.error('WebSocket error:', err);
         ws.close(); 
     });
+
+    // Disconnect and reconnect every 5 minutes
+    setInterval(() => {
+        console.log('Disconnecting for a reconnect...');
+        ws.close();
+    }, 5 * 60 * 1000); // 5 minutes
 }
 
 connect();
