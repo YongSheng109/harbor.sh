@@ -6,7 +6,7 @@ def connect_to_server():
     while True:
         try:
             client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            client.connect(("0.tcp.ap.ngrok.io", 14844))
+            client.connect(("0.tcp.ap.ngrok.io", 19468))
             print("Debug: Connected to the server.")  # Debug statement
             return client
         except Exception as e:
